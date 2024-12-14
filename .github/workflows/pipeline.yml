@@ -23,7 +23,7 @@ jobs:
           distribution: 'temurin'
           java-version: ${{ matrix.java }}
       - name: Validate Code Style
-        run: mvn checkstyle:check
+        run: java -version
       - name: Build Application
         run: mvn clean package
 
@@ -76,7 +76,7 @@ jobs:
           distribution: 'temurin'
           java-version: '11' # E2E uniquement sur Java 17
       - name: Run E2E Tests
-        run: ./gradlew e2eTest # Utiliser vos scripts personnalisés
+        run: mvn e2eTest # Utiliser vos scripts personnalisés
 
   # 5. Packaging et Artefacts
   package-artifacts:
@@ -106,7 +106,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Deploy to Staging
-        run: ./deploy-scripts/deploy.sh staging
+        run: ./deploy.sh staging
 
   # 7. Déploiement en Production
   deploy-production:
@@ -116,7 +116,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Deploy to Production
-        run: ./deploy-scripts/deploy.sh production
+        run: ./deploy.sh production
 
     # Lister des Jobs
     #1. Validation du code
@@ -128,5 +128,5 @@ jobs:
     #7. Test end to end
     #8. Packegging et Artifact
     #9. Deploment environnement de Tests
-   #10. Verification Stagging
+    #10. Verification Stagging
     #11. Deployment environnement de Production

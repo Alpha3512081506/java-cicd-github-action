@@ -76,7 +76,7 @@ jobs:
           distribution: 'temurin'
           java-version: '11' # E2E uniquement sur Java 17
       - name: Run E2E Tests
-        run: ./gradlew e2eTest # Utiliser vos scripts personnalisés
+        run: mvn e2eTest # Utiliser vos scripts personnalisés
 
   # 5. Packaging et Artefacts
   package-artifacts:

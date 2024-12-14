@@ -11,6 +11,9 @@ public class CalculatorServiceImpl implements CalculatorService {
 
 	private final Calculator calculator;
 
+	/**
+	 * documenter
+	 */
 	private final SolutionFormatter solutionFormatter;
 
 	public CalculatorServiceImpl(Calculator calculator, SolutionFormatter solutionFormatter) {
@@ -19,7 +22,7 @@ public class CalculatorServiceImpl implements CalculatorService {
 	}
 
 	@Override
-	public CalculationModel calculate(CalculationModel calculationModel) {
+	public CalculationModel calculate(final CalculationModel calculationModel) {
 		final CalculationType type = calculationModel.getType();
 
 		Integer response = null;
@@ -41,7 +44,7 @@ public class CalculatorServiceImpl implements CalculatorService {
 			}
 			break;
 		default:
-			throw new UnsupportedOperationException("Unsupported calculations");
+throw new UnsupportedOperationException("Unsupported calculations");
 		}
 
 		calculationModel.setSolution(response);

@@ -20,7 +20,7 @@ public class CalculatorController {
 	public static final String CALCULATOR_TEMPLATE = "calculator";
 
 	@Inject
-	CalculatorService calculatorService;
+	private CalculatorService calculatorService;
 
 	@GetMapping("/")
 	public String index(Calculation calculation) {
