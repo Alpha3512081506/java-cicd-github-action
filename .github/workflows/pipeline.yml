@@ -128,9 +128,9 @@ jobs:
     #7. Test end to end
     #8. Packegging et Artifact
     #9. Deploment environnement de Tests
-<<<<<<< HEAD
+
     #10. Verification Stagging
-=======
+
    #10. Verification Stagging
->>>>>>> 8d11583d6807a132dc0bbf661cc489f4980117a3
+
     #11. Deployment environnement de Production
