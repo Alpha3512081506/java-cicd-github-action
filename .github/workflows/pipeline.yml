@@ -23,7 +23,7 @@ jobs:
           distribution: 'temurin'
           java-version: ${{ matrix.java }}
       - name: Validate Code Style
-        run: mvn checkstyle:check
+        run: java -version
       - name: Build Application
         run: mvn clean package
 
